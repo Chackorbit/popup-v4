@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Popup</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
@@ -133,11 +143,11 @@
       </button>
       <div class="popup-content">
         <h2>Última Hora</h2>
-        <p class="description" style="">
+        <p class="description">
           Las nóminas no agrícolas de EE.UU. aumentan en 227,000 en noviembre
           frente a los 200,000 esperados.
         </p>
-        <p class="description-bold" style="">¿Cómo reaccionará el mercado?</p>
+        <p class="description-bold">¿Cómo reaccionará el mercado?</p>
         <button class="cta-btn">Explorar Mercados</button>
         <p
           style="
@@ -152,5 +162,22 @@
         </p>
       </div>
     </div>
+
+    <script>
+      document.querySelectorAll(".close-btn").forEach((btn) => {
+        btn.onclick = () => {
+          if (parent.$solitics) {
+            parent.$solitics.hidePopup();
+          }
+        };
+      });
+      document.querySelector(".cta-btn").onclick = () => {
+        if (parent.$solitics) {
+          const customFields = { message: "validation_page" };
+          parent.$solitics.emit("VALIDATE_EMAIL", 0, customFields);
+          parent.$solitics.hidePopup();
+        }
+      };
+    </script>
   </body>
 </html>
