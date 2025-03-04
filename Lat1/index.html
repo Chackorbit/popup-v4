@@ -12,9 +12,10 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
     <style>
       * {
         margin: 0;
@@ -56,6 +57,8 @@
         font-size: 21px;
         color: #000000;
         font-weight: 600;
+        line-height: 32px;
+        letter-spacing: 0.02em;
       }
       .description {
         color: #2a3048;
@@ -75,12 +78,12 @@
         margin-top: 12px;
         display: block;
         width: 100%;
-        padding: 10px 20px;
+        padding: 6px 0px;
         background: #dcad65;
         color: white;
-        text-decoration: none;
         font-size: 12px;
         line-height: 23px;
+        font-weight: 500;
         border: none;
         border-radius: 5px;
       }
@@ -91,15 +94,23 @@
         height: 17px;
         padding: 0;
         margin: 0;
-        top: 10px;
-        right: 10px;
+        top: 6px;
+        right: 6px;
         background: none;
         border: none;
-        font-size: 24px;
         cursor: pointer;
       }
       .bg-img {
         display: none;
+      }
+
+      .date {
+        font-size: 8px;
+        line-height: 9px;
+        font-weight: 400;
+        color: #2a3048;
+        text-align: center;
+        margin-top: 4px;
       }
       @media (max-width: 600px) {
         .popup {
@@ -108,7 +119,7 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 0 18px 20px 18px;
+          padding: 0 18px 11px 18px;
           text-align: center;
           background-image: url("https://i.ibb.co/QvKtqQR3/r-mob.png");
           background-position: top;
@@ -117,21 +128,42 @@
         }
         .popup-content {
           max-width: 274px;
+          width: 100%;
         }
+
+        .popup h2 {
+          font-size: 22px;
+          line-height: 33px;
+          font-weight: 700;
+          letter-spacing: 0;
+        }
+
         .description {
           display: inline-block;
           font-size: 14px;
           line-height: 22px;
-          font-weight: medium;
+          font-weight: 500;
           max-width: 258px;
         }
         .description-bold {
           color: #3d3c42;
           font-size: 14px;
           line-height: 22px;
+          font-weight: 700;
+          text-align: left;
+          padding-left: 8px;
         }
         .popup .cta-btn {
           border-radius: 6px;
+          font-size: 17px;
+          font-weight: 600;
+          line-height: 32px;
+        }
+
+        .date {
+          margin-top: 5px;
+          font-size: 10px;
+          line-height: 15px;
         }
       }
     </style>
@@ -149,17 +181,7 @@
         </p>
         <p class="description-bold">¿Cómo reaccionará el mercado?</p>
         <button class="cta-btn">Explorar Mercados</button>
-        <p
-          style="
-            font-size: 8px;
-            line-height: 8px;
-            color: #2a3048;
-            text-align: center;
-            margin-top: 4px;
-          "
-        >
-          Feb 11, 15:00 GMT
-        </p>
+        <p class="date">Feb 11, 15:00 GMT</p>
       </div>
     </div>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,11 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -21,7 +25,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Tajawal", Arial, sans-serif;
+        font-family: "Tajawal", sans-serif;
       }
 
       body {
@@ -30,23 +34,25 @@
 
       .popup {
         display: flex;
-        justify-content: end;
         margin-left: auto;
         margin-right: auto;
         background: #ffffff;
         background-image: url("https://i.ibb.co/wh4BQQrR/Group-897469344.png");
         background-position: left;
-        background-size: 298px 100%;
         background-repeat: no-repeat;
         border-radius: 8px;
         padding: 32px;
-        padding-bottom: 26px;
+        padding-top: 34px;
+
         max-width: 530px;
         width: 100%;
+        max-height: 250px;
+        height: 100%;
         text-align: right;
         position: relative;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         overflow: hidden;
+        box-sizing: border-box;
       }
 
       .popup-content {
@@ -54,9 +60,13 @@
       }
 
       .popup h2 {
+        display: block;
         font-size: 21px;
         color: #000000;
-        font-weight: bold;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        height: 25px;
+        line-height: 20px;
       }
       .description {
         color: #2a3048;
@@ -67,7 +77,7 @@
       .description-bold {
         color: #545454;
         font-size: 14px;
-        font-weight: 600;
+        font-weight: bold;
         line-height: 20px;
         margin-top: 8px;
       }
@@ -75,14 +85,25 @@
         margin-top: 12px;
         display: block;
         width: 100%;
-        padding: 10px 20px;
+        max-height: 35px;
+        padding: 6px 0px;
         background: #dcad65;
         color: white;
         text-decoration: none;
-        font-size: 12px;
+        font-size: 14px;
+        font-weight: bold;
         line-height: 23px;
         border: none;
         border-radius: 5px;
+      }
+
+      .date {
+        font-size: 8px;
+        line-height: 8px;
+        color: #2a3048;
+        text-align: center;
+        margin-top: 4px;
+        font-family: "Poppins", sans-serif;
       }
 
       .popup .close-btn {
@@ -91,11 +112,10 @@
         height: 17px;
         padding: 0;
         margin: 0;
-        top: 10px;
-        right: 10px;
+        top: 6px;
+        right: 6px;
         background: none;
         border: none;
-        font-size: 24px;
         cursor: pointer;
       }
       .bg-img {
@@ -104,11 +124,11 @@
       @media (max-width: 600px) {
         .popup {
           max-width: 310px;
+          max-height: 451px !important;
           height: 451px;
           display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 0 18px 20px 18px;
+          align-items: end;
+          padding: 0 18px 15px 18px;
           text-align: center;
           background-image: url("https://i.ibb.co/QvKtqQR3/r-mob.png");
           background-position: top;
@@ -117,27 +137,41 @@
         }
         .popup-content {
           max-width: 274px;
+          width: 100%;
         }
         .popup-content h2 {
           font-size: 24px;
+          letter-spacing: 0;
+          line-height: 16px;
         }
         .description {
-          display: inline-block;
           font-size: 16px;
           line-height: 22px;
-          max-width: 232px;
+          padding: 0 18px;
+          margin-top: 12px;
+          font-weight: 400;
         }
         .description-bold {
           color: #3d3c42;
           font-size: 16px;
-          line-height: 22px;
+          line-height: 25px;
+          margin-top: 10px;
         }
         .popup .cta-btn {
-          padding: 6px 64px;
+          width: 100%;
+          max-height: 44px;
+          padding: 6px 0px;
           border-radius: 6px;
-          font-weight: bold;
+          font-weight: 700;
           font-size: 17px;
           line-height: 32px;
+          margin-top: 12px;
+        }
+
+        .date {
+          margin-top: 5px;
+          font-size: 10px;
+          line-height: 15px;
         }
       }
     </style>
@@ -145,7 +179,12 @@
   <body>
     <div class="popup">
       <button class="close-btn">
-        <img src="https://i.ibb.co/yBhRsN97/close.png" alt="close" border="0" />
+        <img
+          src="https://i.ibb.co/yBhRsN97/close.png"
+          alt="close"
+          border="0"
+          width="17"
+        />
       </button>
       <div class="popup-content">
         <h2>أخبار عاجلة</h2>
@@ -155,17 +194,7 @@
         </p>
         <p class="description-bold">كيف سيتفاعل السوق؟</p>
         <button class="cta-btn">استكشاف الأسواق</button>
-        <p
-          style="
-            font-size: 8px;
-            line-height: 8px;
-            color: #2a3048;
-            text-align: center;
-            margin-top: 4px;
-          "
-        >
-          Feb 11, 15:00 GMT
-        </p>
+        <p class="date">Feb 11, 15:00 GMT</p>
       </div>
     </div>
 
