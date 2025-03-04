@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Popup</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       * {
         margin: 0;
@@ -157,5 +168,22 @@
         </p>
       </div>
     </div>
+
+    <script>
+      document.querySelectorAll(".close-btn").forEach((btn) => {
+        btn.onclick = () => {
+          if (parent.$solitics) {
+            parent.$solitics.hidePopup();
+          }
+        };
+      });
+      document.querySelector(".cta-btn").onclick = () => {
+        if (parent.$solitics) {
+          const customFields = { message: "validation_page" };
+          parent.$solitics.emit("VALIDATE_EMAIL", 0, customFields);
+          parent.$solitics.hidePopup();
+        }
+      };
+    </script>
   </body>
 </html>
