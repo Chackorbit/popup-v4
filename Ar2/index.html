@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Tajawal", Arial, sans-serif;
+      }
+
+      body {
+        position: relative;
+      }
+
+      .popup {
+        display: flex;
+        justify-content: end;
+        margin-left: auto;
+        margin-right: auto;
+        background: #ffffff;
+        background-image: url("https://i.ibb.co/p7HLpJF/b-desc.png");
+        background-position: left;
+        background-size: 298px 100%;
+        background-repeat: no-repeat;
+        border-radius: 8px;
+        padding: 32px;
+        padding-bottom: 26px;
+        max-width: 530px;
+        width: 100%;
+        text-align: right;
+        position: relative;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .popup-content {
+        max-width: 226px;
+      }
+
+      .popup h2 {
+        font-size: 21px;
+        color: #000000;
+        font-weight: bold;
+      }
+      .description {
+        color: #2a3048;
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 12px;
+      }
+      .description-bold {
+        color: #545454;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        margin-top: 8px;
+      }
+      .popup .cta-btn {
+        margin-top: 12px;
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+        background: #dcad65;
+        color: white;
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 23px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .popup .close-btn {
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        padding: 0;
+        margin: 0;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .bg-img {
+        display: none;
+      }
+      @media (max-width: 600px) {
+        .popup {
+          max-width: 310px;
+          height: 451px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0 18px 20px 18px;
+          text-align: center;
+          background-image: url("https://i.ibb.co/JWnhQJTN/b-mob.png");
+          background-position: top;
+          background-size: contain;
+          border-radius: 10px;
+        }
+        .popup-content {
+          max-width: 274px;
+        }
+        .popup-content h2 {
+          font-size: 24px;
+        }
+        .description {
+          display: inline-block;
+          font-size: 16px;
+          line-height: 22px;
+          max-width: 232px;
+        }
+        .description-bold {
+          color: #3d3c42;
+          font-size: 16px;
+          line-height: 22px;
+        }
+        .popup .cta-btn {
+          padding: 6px 64px;
+          border-radius: 6px;
+          font-weight: bold;
+          font-size: 17px;
+          line-height: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup">
+      <button class="close-btn">
+        <img src="https://i.ibb.co/yBhRsN97/close.png" alt="close" border="0" />
+      </button>
+      <div class="popup-content">
+        <h2>أخبار عاجلة</h2>
+        <p class="description">
+          ارتفعت جداول الرواتب غير الزراعية في الولايات المتحدة بمقدار 227,000
+          في نوفمبر مقابل 200,000 المتوقع
+        </p>
+        <p class="description-bold">كيف سيتفاعل السوق؟</p>
+        <button class="cta-btn">استكشاف الأسواق</button>
+        <p
+          style="
+            font-size: 8px;
+            line-height: 8px;
+            color: #2a3048;
+            text-align: center;
+            margin-top: 4px;
+          "
+        >
+          Feb 11, 15:00 GMT
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
