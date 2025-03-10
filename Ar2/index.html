@@ -90,6 +90,7 @@
         line-height: 25px;
         border: none;
         border-radius: 5px;
+        cursor: pointer;
       }
 
       .date {
@@ -102,7 +103,11 @@
         font-family: "Poppins", sans-serif;
       }
 
-      .popup .close-btn {
+      .bg-img {
+        display: none;
+      }
+
+      .close-btn {
         position: absolute;
         width: 17px;
         height: 17px;
@@ -113,9 +118,25 @@
         background: none;
         border: none;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      .bg-img {
-        display: none;
+
+      .line {
+        position: absolute;
+        width: 17px;
+        height: 2px;
+        background: black;
+        border-radius: 2px;
+      }
+
+      .line1 {
+        transform: rotate(45deg);
+      }
+
+      .line2 {
+        transform: rotate(-45deg);
       }
       @media (max-width: 600px) {
         .popup {
@@ -173,9 +194,10 @@
     </style>
   </head>
   <body>
-    <div class="popup">
+    <div class="popup" id="popup">
       <button class="close-btn">
-        <img src="https://i.ibb.co/yBhRsN97/close.png" alt="close" border="0" />
+        <span class="line line1"></span>
+        <span class="line line2"></span>
       </button>
       <div class="popup-content">
         <h2>أخبار عاجلة</h2>

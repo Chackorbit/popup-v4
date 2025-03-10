@@ -86,20 +86,9 @@
         font-weight: 500;
         border: none;
         border-radius: 5px;
-      }
-
-      .popup .close-btn {
-        position: absolute;
-        width: 17px;
-        height: 17px;
-        padding: 0;
-        margin: 0;
-        top: 6px;
-        right: 6px;
-        background: none;
-        border: none;
         cursor: pointer;
       }
+
       .bg-img {
         display: none;
       }
@@ -112,6 +101,38 @@
         text-align: center;
         margin-top: 4px;
       }
+      .close-btn {
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        padding: 0;
+        margin: 0;
+        top: 6px;
+        right: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .line {
+        position: absolute;
+        width: 17px;
+        height: 2px;
+        background: black;
+        border-radius: 2px;
+      }
+
+      .line1 {
+        transform: rotate(45deg);
+      }
+
+      .line2 {
+        transform: rotate(-45deg);
+      }
+
       @media (max-width: 600px) {
         .popup {
           max-width: 310px;
@@ -150,8 +171,6 @@
           font-size: 14px;
           line-height: 22px;
           font-weight: 700;
-          text-align: left;
-          padding-left: 8px;
         }
         .popup .cta-btn {
           border-radius: 6px;
@@ -169,10 +188,12 @@
     </style>
   </head>
   <body>
-    <div class="popup">
+    <div class="popup" id="popup">
       <button class="close-btn">
-        <img src="https://i.ibb.co/yBhRsN97/close.png" alt="close" border="0" />
+        <span class="line line1"></span>
+        <span class="line line2"></span>
       </button>
+
       <div class="popup-content">
         <h2>Última Hora</h2>
         <p class="description">
