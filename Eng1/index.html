@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        position: relative;
+      }
+
+      .popup {
+        display: flex;
+        justify-content: end;
+        margin-left: auto;
+        margin-right: auto;
+        background: #ffffff;
+        background-image: url("https://tradeeu-global.s3.eu-central-1.amazonaws.com/web-content/main-img-2.png");
+        background-position: left;
+        background-size: 298px 100%;
+        background-repeat: no-repeat;
+        border-radius: 8px;
+        padding: 32px;
+        padding-bottom: 26px;
+        max-width: 530px;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .popup-content {
+        max-width: 226px;
+      }
+
+      .popup h2 {
+        font-size: 21px;
+        color: #000000;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: 0.02em;
+      }
+      .description {
+        color: #2a3048;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 20px;
+        margin-top: 12px;
+      }
+      .description-bold {
+        color: #545454;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 20px;
+        margin-top: 8px;
+      }
+      .popup .cta-btn {
+        margin-top: 12px;
+        display: block;
+        width: 100%;
+        padding: 6px 0px;
+        background: #dcad65;
+        color: white;
+        font-size: 12px;
+        line-height: 23px;
+        font-weight: 500;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .bg-img {
+        display: none;
+      }
+
+      .date {
+        font-size: 8px;
+        line-height: 9px;
+        font-weight: 400;
+        color: #2a3048;
+        text-align: center;
+        margin-top: 4px;
+      }
+      .close-btn {
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        padding: 0;
+        margin: 0;
+        top: 6px;
+        right: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .line {
+        position: absolute;
+        width: 17px;
+        height: 2px;
+        background: black;
+        border-radius: 2px;
+      }
+
+      .line1 {
+        transform: rotate(45deg);
+      }
+
+      .line2 {
+        transform: rotate(-45deg);
+      }
+
+      @media (max-width: 600px) {
+        .popup {
+          max-width: 310px;
+          height: 451px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0 18px 11px 18px;
+          text-align: center;
+          background-image: url("https://tradeeu-global.s3.eu-central-1.amazonaws.com/web-content/main-img-1-mob.png");
+          background-position: top;
+          background-size: contain;
+          border-radius: 10px;
+        }
+        .popup-content {
+          max-width: 274px;
+          width: 100%;
+        }
+
+        .popup h2 {
+          font-size: 22px;
+          line-height: 33px;
+          font-weight: 700;
+          letter-spacing: 0;
+        }
+
+        .description {
+          display: inline-block;
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 500;
+          max-width: 258px;
+        }
+        .description-bold {
+          color: #3d3c42;
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 700;
+        }
+        .popup .cta-btn {
+          border-radius: 6px;
+          font-size: 17px;
+          font-weight: 600;
+          line-height: 32px;
+        }
+
+        .date {
+          margin-top: 5px;
+          font-size: 10px;
+          line-height: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup" id="popup">
+      <button class="close-btn">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+      </button>
+
+      <div class="popup-content">
+        <h2>Breaking News</h2>
+        <p class="description">
+          U.S Nonfarm Payrolls rise by 227,000 in November vs. 200,000 expected
+        </p>
+        <p class="description-bold">How will market react?</p>
+        <button class="cta-btn">Explore Markets</button>
+        <p class="date">Feb 11, 15:00 GMT</p>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".close-btn").forEach((btn) => {
+        btn.onclick = () => {
+          if (parent.$solitics) {
+            parent.$solitics.hidePopup();
+          }
+        };
+      });
+      document.querySelector(".cta-btn").onclick = () => {
+        if (parent.$solitics) {
+          const customFields = { message: "validation_page" };
+          parent.$solitics.emit("VALIDATE_EMAIL", 0, customFields);
+          parent.$solitics.hidePopup();
+        }
+      };
+    </script>
+  </body>
+</html>
